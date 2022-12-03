@@ -15,12 +15,10 @@ spec:
     spec:
       containers:
       - name: my-flask-web
-        image: my-flask-web:latest
+        image: my-flask-web:0.0.1
         imagePullPolicy: Never
-        ports:
-        - containerPort: 4000
         env:
           - name: FLASK_RUN_PORT
-            value: '8000'
+            value: '4000'
           - name: FLASK_APP
             value: 'main'
