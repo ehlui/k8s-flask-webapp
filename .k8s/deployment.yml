@@ -1,0 +1,26 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-flaskapp-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-flaskapp-deployment
+  template: 
+    metadata:
+      labels:
+        app: my-flaskapp-deployment
+    spec:
+      containers:
+      - name: my-flask-web
+        image: my-flask-web:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 4000
+        env:
+          - name: FLASK_RUN_PORT
+            value: '8000'
+          - name: FLASK_APP
+            value: 'main'
