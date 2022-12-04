@@ -19,3 +19,18 @@ The loadbalancer service is for local purpose. However, we could have used the d
 docker build -t my-flask-web:0.0.1 ./app
 kubectl create -f .k8s
 ```
+
+## Tests
+
+1. Place youself at src path as the root flask project
+    - ```cd app/src/```
+2. Load all its dependencies (requirements.txt)
+    - ```pip install -r requirements.txt```
+3. Run it
+
+```sh
+# All the tests
+python -m pytest  tests
+# Specific ones
+$ python -m pytest -s tests/test_client.py
+```
