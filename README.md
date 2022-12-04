@@ -20,7 +20,31 @@ docker build -t my-flask-web:0.0.1 ./app
 kubectl create -f .k8s
 ```
 
-## Tests
+---
+
+## Environments
+
+Local:
+- root project path: **app/src/**
+Tests:
+ - path: **app/src/tests**
+
+
+### [Local] Development process
+
+1. Place youself at src path as the root flask project
+    - ```cd app/src/```
+2. Create your **venv** or favourite package manager (like poetry)
+    - ```pip install -r requirements.txt```
+3. Load all its dependencies (requirements.txt)
+    - ```pip install -r requirements.txt```
+4. Happy dev!    
+
+
+Reminder:
+- Any not-needed file or script for production must be ignored to our Dockerfile. This can be done creating a **.dockerignore** in our root flask project path.
+
+### Tests
 
 1. Place youself at src path as the root flask project
     - ```cd app/src/```
